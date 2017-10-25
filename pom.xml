@@ -19,7 +19,7 @@
     <groupId>org.fishwife</groupId>
     <artifactId>jrugged</artifactId>
     <packaging>pom</packaging>
-    <version>4.0.0</version>
+    <version>4.0.1-SNAPSHOT</version>
     <name>jrugged</name>
     <url>https://github.com/Comcast/jrugged</url>
 
