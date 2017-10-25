@@ -38,39 +38,10 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:Comcast/jrugged.git</connection>
-        <developerConnection>scm:git:git@github.com:Comcast/jrugged.git</developerConnection>
-        <url>git@github.com:Comcast/jrugged.git</url>
+        <connection>scm:git:git@github.com:rkerry/jrugged.git</connection>
+        <developerConnection>scm:git:git@github.com:rkerry/jrugged.git</developerConnection>
+        <url>git@github.com:rkerry/jrugged.git</url>
     </scm>
-
-    <developers>
-        <developer>
-            <id>jcampbell</id>
-            <name>Joe Campbell</name>
-            <email>joseph_campbell@comcast.com</email>
-        </developer>
-        <developer>
-            <id>weggert</id>
-            <name>Walter Eggert</name>
-            <email>walter_eggert@comcast.com</email>
-        </developer>
-        <developer>
-            <id>jmoore</id>
-            <name>Jon Moore</name>
-            <email>jonathan_moore@comcast.com</email>
-        </developer>
-    </developers>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>sonatype-nexus-staging</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>sonatype-nexus-staging</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -144,50 +115,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>release-sign-artifacts</id>
-            <activation>
-                <property>
-                    <name>performRelease</name>
-                    <value>true</value>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.3</version>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <serverId>sonatype-nexus-staging</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>false</autoReleaseAfterClose>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.1</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                                <configuration>
-                                    <keyname>JRUGGED</keyname>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 
     <modules>
         <module>jrugged-core</module>

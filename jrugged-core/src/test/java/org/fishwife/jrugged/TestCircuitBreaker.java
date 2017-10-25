@@ -426,9 +426,9 @@ public class TestCircuitBreaker {
 
         String s = impl.getTripExceptionAsString();
 
-        assertTrue(impl.getTripExceptionAsString().startsWith("java.lang.Exception: broken\n"));
-        assertTrue(impl.getTripExceptionAsString().contains("at org.fishwife.jrugged.TestCircuitBreaker$FailingCallable.call"));
-        assertTrue(impl.getTripExceptionAsString().contains("Caused by: java.lang.Exception: The Cause\n"));
+        assertTrue(s.startsWith("java.lang.Exception: broken\r\n"));
+        assertTrue(s.contains("at org.fishwife.jrugged.TestCircuitBreaker$FailingCallable.call"));
+        assertTrue(s.contains("Caused by: java.lang.Exception: The Cause\r\n"));
     }
 
     @Test
